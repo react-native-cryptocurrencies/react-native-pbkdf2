@@ -1,8 +1,15 @@
 {
-  "name": "react-native-pbkdf2",
-  "version": "0.1.1",
+  "name": "@react-native-cryptocurrencies/react-native-pbkdf2",
+  "version": "0.1.2",
   "description": "A Password Based Key Derivation 2 (PBKDF2) algorithm for React Native",
   "main": "index.js",
+  "contributors": [
+    {
+      "name": "Jorge Duarte",
+      "email": "info@malagadev.com",
+      "url": "https://www.malagadev.com/"
+    }
+  ],
   "keywords": [
     "pbkdf2",
     "react-native"
@@ -10,6 +17,6 @@
   "author": "Daniel Torres <danielfeelfine@gmail.com>",
   "license": "MIT",
   "peerDependencies": {
-    "react-native": "^0.56.0"
+    "react-native": "^0.61.0"
   }
 }

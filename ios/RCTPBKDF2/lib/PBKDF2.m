@@ -3,15 +3,9 @@
 #import <CommonCrypto/CommonKeyDerivation.h>
 
 #import "PBKDF2.h"
+#import "NSData+Conversion.h"
 
 @implementation PBKDF2
-
-+ (NSString *) toHex:(NSData *)nsdata {
-    NSString * hexStr = [NSString stringWithFormat:@"%@", nsdata];
-    for(NSString * toRemove in [NSArray arrayWithObjects:@"<", @">", @" ", nil])
-        hexStr = [hexStr stringByReplacingOccurrencesOfString:toRemove withString:@""];
-    return hexStr;
-}
 
 + (NSString *) derivationKey:(NSString *)password salt: (NSString *)salt iterations: (nonnull int *)iterations {
     // Data of String to generate Hash key(hexa decimal string).
@@ -38,7 +32,9 @@
         return @"";
     }
 
-    return [self toHex:hashKeyData];
+    NSString *hexString = [hashKeyData hexadecimalString];
+
+    return hexString;
 }
 
 @end
